@@ -7,7 +7,7 @@ class Deposito{
 	method bicisRapidas(){ return coleccionBici.filter({ b => b.velocidadCrucero() > 25 })}
 	method marca(){ return coleccionBici.map({ b => b.marca()}).asSet().asList()}
 	method esNocturno(){ return coleccionBici.all({ b => b.tieneLuz() })}
-	method tieneBiciletaParaLLevar(kg){return coleccionBici.any({ b => b.carga() >= kg })}
+	method tieneBiciletaParaLLevar(kg){return coleccionBici.any({ b => b.carga() > kg })}
 	method biciMasRapida(){ return coleccionBici.max({ b => b.velocidadCrucero() }).marca()}
 	method bicisMasLargas(){return coleccionBici.filter({ b => b.largo() > 170 }) }
 	method cargaBicisMasLargas(){ return self.bicisMasLargas().sum({ b=> b.carga()})}

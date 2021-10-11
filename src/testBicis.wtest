@@ -18,7 +18,7 @@ describe "Test Bicis" {
 		bici2.agregarAccesorio(new Morral(largo= 21, tieneOjoDeGato=true))
 		
 		//accesorio bici 3
-		bici2.agregarAccesorio(new Morral(largo= 6, tieneOjoDeGato=false))
+		bici3.agregarAccesorio(new Morral(largo= 6, tieneOjoDeGato=false))
 	}
 	
 
@@ -51,7 +51,7 @@ describe "Test Bicis" {
 		assert.equals(28,bici2.velocidadCrucero())
 	}
 	test "bici 2 carga"{
-		assert.equals(16,bici2.carga())
+		assert.equals(23,bici2.carga())
 	}
 	test "bici 2 peso"{
 		assert.equals(15.5,bici2.peso())
