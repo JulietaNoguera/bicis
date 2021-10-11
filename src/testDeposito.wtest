@@ -1,0 +1,37 @@
+
+
+import deposito.*
+import bicis.*
+describe "Test Deposito" {
+
+	const bici1= new Bicicletas( rodado=28, largo=150, marca="Olmo")
+	const bici2= new Bicicletas( rodado=26, largo=110, marca="Legnano")
+	const bici3= new Bicicletas( rodado=20, largo=90, marca="Legnano")
+	const deposito1= new Deposito()
+	
+	method initialize(){
+		//agregar bici
+		deposito1.agregarBiciAlDeposito(bici1)
+		deposito1.agregarBiciAlDeposito(bici2)
+		deposito1.agregarBiciAlDeposito(bici3)
+	}
+	
+
+	test "deposito con rapidas"{
+		assert.equals([bici1,bici2],deposito1.bicisRapidas())
+	}
+	test "marcas del deposito"{
+		assert.equals(["Olmo", "Legnano"],deposito1.marca())
+	}
+	test "es nocturno"{
+		assert.equals(false, deposito1.esNocturno())
+	}
+	test "puede llevar bici 10 km"{
+		assert.equals(true,deposito1.tieneBiciletaParaLLevar(10))
+	}
+	test "puede llevar bici 50 km"{
+		assert.equals(false,deposito1.tieneBiciletaParaLLevar(50))
+	}
+
+}
+	
